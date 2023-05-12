@@ -1,0 +1,32 @@
+<html>
+  <head lang="zh">
+    <title>阿罗娜</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="pixi.min.6.js"></script>
+    <script src="pixi.spine.min.3.js"></script>
+    <script>
+      const app = new PIXI.Application({
+        backgroundColor: 0xffffff,
+        antialias: true,
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight,
+      });
+      document.getElementById("app").appendChild(app.view); //div
+      let loader = app.loader.add(
+        "https://webcnstatic.yostar.net/ba_cn_web/prod/web/pc/Arona/Arona.atlas",
+        "https://webcnstatic.yostar.net/ba_cn_web/prod/web/pc/Arona/Arona.json"
+      ); //OD.json你的json
+      loader.load((loader, res) => {
+        let ordylan = new PIXI.spine.Spine(res[Object.keys(res)[0]].spineData),
+          options = [""];
+        ordylan.scale.set(0.4); //放大倍数
+        ordylan.state.setAnimation(0, "idle", true); //loop你的动画名字 true 为循环播放
+        ordylan.x = 1000;
+        ordylan.y = 700;
+        app.stage.addChild(ordylan);
+      });
+    </script>
+  </body>
+</html>
