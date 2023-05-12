@@ -1,0 +1,100 @@
+body {
+  height: 100%;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* 页样式 */
+.arona-page {
+  position: relative;
+  color: white;
+  height: 100vh;
+  font-family: sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 阿罗娜场景容器，包含背景，Spine，图标 */
+.arona-scene-container {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 阿罗娜场景背景，控制高度 */
+.arona-backgroud {
+  height: 35.666667rem;
+}
+
+/* 阿罗娜Spine容器 */
+.arona-container {
+  position: absolute;
+  height: 100%;
+  left: 60%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* --------------------------------------------------------
+  指纹认证图标样式，包含动画 START
+  ---------------------------------------------------------*/
+
+.arona-fp-icon {
+  position: absolute;
+  top: 16.6666666667rem;
+  left: 51%;
+}
+
+@keyframes puff-out-center {
+  0% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(2) translate(-50%, -50%);
+    transform: scale(2) translate(-50%, -50%);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+}
+
+.arona-fp-icon img:nth-child(1) {
+  position: absolute;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-35%, 40%);
+  z-index: 2;
+  width: 3.1666666667rem;
+  cursor: pointer;
+}
+
+.arona-fp-icon img:nth-child(2) {
+  position: absolute;
+  top: 45px;
+  left: 5px;
+  z-index: 1;
+  width: 3.1666666667rem;
+  -webkit-animation: puff-out-center 2s infinite
+    cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  animation: puff-out-center 2s infinite cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+/* --------------------------------------------------------
+  指纹认证图标样式，包含动画 END
+  ---------------------------------------------------------*/
