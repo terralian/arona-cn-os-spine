@@ -17,5 +17,7 @@
 
 ## @see
 
-[碧蓝档案-国服官网]: https://bluearchive-cn.com/
-[pixijs]: https://github.com/pixijs/pixijs
+\- 碧蓝档案-国服官网: https://bluearchive-cn.com/ 
+
+\- pixijs: https://github.com/pixijs/pixijs 
+
